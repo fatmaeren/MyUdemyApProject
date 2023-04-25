@@ -1,0 +1,29 @@
+﻿@model List<BookingModel.Result>
+@{
+    Layout = null;
+    int count = 0;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Otel Adı</th>
+            <th scope="col">Puanı</th>
+            <th scope="col">Detaylar</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            count++;
+            <tr>
+                <th scope="row">@count</th>
+                <td>@x.name</td>
+                <td>@x.reviewScore</td>
+                <td><a href="#" class="btn btn-dark">Detaylar</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

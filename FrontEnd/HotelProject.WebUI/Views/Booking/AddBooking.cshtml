@@ -1,0 +1,98 @@
+﻿@model CreateBookingDto
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+            <h6 class="section-title text-center text-primary text-uppercase">Rezervasyon Paneli</h6>
+            <h1 class="mb-5">Odanızı Hemen <span class="text-primary text-uppercase">Rezerve Edin</span></h1>
+        </div>
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="row g-3">
+                    <div class="col-6 text-end">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.1s" src="~/hotel-html-template/img/about-1.jpg" style="margin-top: 25%;">
+                    </div>
+                    <div class="col-6 text-start">
+                        <img class="img-fluid rounded w-100 wow zoomIn" data-wow-delay="0.3s" src="~/hotel-html-template/img/about-2.jpg">
+                    </div>
+                    <div class="col-6 text-end">
+                        <img class="img-fluid rounded w-50 wow zoomIn" data-wow-delay="0.5s" src="~/hotel-html-template/img/about-3.jpg">
+                    </div>
+                    <div class="col-6 text-start">
+                        <img class="img-fluid rounded w-75 wow zoomIn" data-wow-delay="0.7s" src="~/hotel-html-template/img/about-4.jpg">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="wow fadeInUp" data-wow-delay="0.2s">
+                    <form method="post" asp-action="AddBooking" asp-controller="Booking">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" name="Name" placeholder="Adınız"> 
+                                    <label>Adınız</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" name="Mail" placeholder="Mail Adresiniz">
+                                    <label>Mail Adresiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating date" >
+                                    <input type="date" class="form-control" name="CheckIn" placeholder="Check In" /> 
+                                    <label for="CheckIn">Giriş Tarihiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating date" >
+                                    <input type="date" class="form-control" name="CheckOut" placeholder="Check Out"  />
+                                    <label for="CheckOut">Çıkış Tarihiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="select1" name="AdultCount">
+                                        <option value="1">Yetişkin 1</option>
+                                        <option value="2">Yetişkin 2</option>
+                                        <option value="3">Yetişkin 3</option>
+                                    </select>
+                                    <label for="AdultCount">Yetişkin Sayısı Seçiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" id="select2" name="ChildCount">
+                                        <option value="1">Çocuk 1</option>
+                                        <option value="2">Çocuk 2</option>
+                                        <option value="3">Çocuk 3</option>
+                                    </select>
+                                    <label for="ChildCount">Çocuk Sayısı Seçiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select class="form-select" id="select3" name="RoomCount">
+                                        <option value="1">Oda 1</option>
+                                        <option value="2">Oda 2</option>
+                                        <option value="3">Oda 3</option>
+                                    </select>
+                                    <label for="RoomCount">Oda Sayısı Seçiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" placeholder="Özel İsteklerinizi Girebilirsiniz" name="SpecialRequest" style="height: 100px"></textarea>
+                                    <label for="SpecialRequest">Özel İsteklerinizi Girebilirsiniz</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary w-100 py-3"> Rezervasyon Yap</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

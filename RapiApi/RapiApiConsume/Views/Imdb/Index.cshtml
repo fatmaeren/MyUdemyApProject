@@ -1,0 +1,26 @@
+﻿@model List<AoiMovieViewModel>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">rank</th>
+            <th scope="col">title</th>
+            <th scope="col">rating</th>
+            <th scope="col">tariler</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var x in Model){
+        <tr>
+            <th scope="row">@x.rank</th>
+            <td>@x.title</td>
+            <td>@x.rating</td>
+            <td>@x.trailer</td>
+        </tr>
+        }
+    </tbody>
+</table>

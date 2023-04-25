@@ -1,0 +1,44 @@
+﻿@model UpdateStaffViewMode
+@{
+    ViewData["Title"] = "UpdateStaff";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<form class="form-valide" method="post">
+    <input type="hidden" asp-for="ID"/>
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label">Personel Adı </label>
+        <div class="col-lg-6">
+            <input type="text" class="form-control" asp-for="Name" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label">Personel Ünvanı </label>
+        <div class="col-lg-6">
+            <input type="text" class="form-control" asp-for="Title" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label">Sosyal Medya Hesabı </label>
+        <div class="col-lg-6">
+            <input type="text" class="form-control" asp-for="SocialMedia1" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label">Sosyal Medya Hesabı 2</label>
+        <div class="col-lg-6">
+            <input type="text" class="form-control" asp-for="SocialMedia2" />
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-lg-4 col-form-label">Sosyal Medya Hesabı 3</label>
+        <div class="col-lg-6">
+            <input type="text" class="form-control" asp-for="SocialMedia3" />
+        </div>
+    </div>
+    <button class="btn mb-1 btn-secondary">
+        Güncelle <span class="btn-icon-right"><i class="fa fa-upload"></i></span>
+    </button>
+
+</form>
+

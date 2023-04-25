@@ -1,0 +1,45 @@
+﻿@model List<ResultRoomDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Oda Numarası</th>
+                <th>Oda Başlığı</th>
+                <th>Ücret</th>
+                <th>Yatak Sayısı</th>
+                <th>Banyo Sayısı</th>
+                <th>Sil/Güncelle</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                <tr>
+                    <th>@x.ID</th>
+                    <td>@x.RoomNumber</td>
+                    <td>@x.Title</td>
+                    <td>@x.Price</td>
+                    <td>@x.BedCount</td>
+
+                    <td>@x.BathCount</td>
+                    <td>
+                        <span><a href="/AdminRoom/UpdateRoom/@x.ID" data-toggle="tooltip" data-placement="top" title="Güncelle"><i class="fa fa-pencil color-muted m-r-5"></i> </a><a href="/AdminRoom/DeleteRoom/@x.ID" data-toggle="tooltip" data-placement="top" title="Sil"><i class="fa fa-close color-danger m-e-5"></i></a></span>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/RoomAdmin/AddRoom/" type="button" class="btn mb-1 btn-secondary">
+        Yeni Oda <span class="btn-icon-right"><i class="fa fa-save"></i></span>
+    </a>
+</div>
+
+
+

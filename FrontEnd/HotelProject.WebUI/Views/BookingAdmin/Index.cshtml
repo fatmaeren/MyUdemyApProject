@@ -1,0 +1,44 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Misafir</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+
+                <th>Durum</th>
+                <th>Durum Butonları</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@x.Name</td>
+                    <td>@x.CheckIn.ToShortDateString()</td>
+                    <td>@x.CheckOut.ToShortDateString()</td>
+                    <td><span class="badge badge-primary px-2">@x.Status</span>
+
+
+                    <td>
+                        <span><a href="/Service/UpdateService/@x.ID" class="btn mb-1 btn-outline-primary m-2"> Onayla </a><a href="/Service/DeleteService/@x.ID" class="btn mb-1 btn-outline-danger m-2">İptal Et</a><a href="/Service/DeleteService/@x.ID" class="btn mb-1 btn-outline-success m-2">Beklet</a><a href="/Service/DeleteService/@x.ID" class="btn mb-1 btn-outline-info m-2">Güncelle</a></span>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a href="/Service/AddService/" type="button" class="btn mb-1 btn-secondary">
+        Yeni Hizmet <span class="btn-icon-right"><i class="fa fa-save"></i></span>
+    </a>
+</div>
